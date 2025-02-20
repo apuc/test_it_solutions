@@ -1,0 +1,20 @@
+{
+    "name": "kavlar/test_it_solutions",
+    "description": "Test task",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kavlar\\TestItSolutions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kavalar",
+            "email": "apuc06@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "itguild/debug": "dev-master"
+    }
+}
