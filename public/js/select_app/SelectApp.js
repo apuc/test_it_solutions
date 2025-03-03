@@ -69,6 +69,7 @@ const templates =
                     <th>Месяц</th>
                     <th>Поступления</th>
                     <th>Списания</th>
+                    <th>Кол-во транзакций</th>
                     <th>Баланс</th>
                 </tr>
                 </thead>
@@ -78,6 +79,7 @@ const templates =
                         <td>${item.month}</td>
                         <td>${item.income}</td>
                         <td>${item.outcome}</td>
+                        <td>${item.days_with_transactions}</td>
                         <td>${item.income - item.outcome}</td>
                     </tr>`;
                 })}
@@ -95,24 +97,6 @@ const templates =
         option: (id, name) => {
             return `<option value="${id}">${name}</option>`;
         },
-        defaultBox: () => {
-            return `<div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-                        <div class="card-body">
-                            <h5 class="card-title">Акция на Старый Новый Год</h5>
-                            <p class="card-text">Акция на Старый Новый Год Акция на Старый Новый Год Акция на Старый Новый Год Акция на Старый Новый Год</p>
-                            <a href="#!" data-mdb-ripple-init class="btn btn-primary">Принять участие</a>
-                        </div>
-                    </div>`;
-        },
-        cardBox: (cardUrl, balance) => {
-            return `<div class="card" style="padding: 10px;">
-                        <img src="${cardUrl}" class="card-img-top"/>
-                        <div class="card-body">
-                            <h4 class="card-title">Баланс: ${balance}</h4>
-                        </div>
-                    </div>`;
-        }
     }
 
 export {SelectApp}

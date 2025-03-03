@@ -7,6 +7,6 @@ use Kavlar\TestItSolutions\app\models\Transactions;
 class TransactionsByMonth extends Transactions
 {
 
-    public array $fields = ['month', 'income', 'outcome'];
+    public array $fields = ['month', 'income', 'outcome', 'days_with_transactions'];
 
 }
