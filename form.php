@@ -6,6 +6,8 @@ require_once "UserForm.php";
 
 include "header.php";
 
+require_once "vendor/autoload.php";
+
 
 
 $inputs = [
@@ -35,10 +37,32 @@ $inputs = [
     ],
 ];
 
-$form = new UserForm();
+$form = new UserForm([
+    'action' => 'save_user.php',
+    'method' => 'POST'
+]);
 $form->load($inputs);
 
-printForm($inputs);
+$form->start();
+$form->field(type: "text", name: "additional_email", params: [
+    'class' => 'additional_email inputForm',
+    'label' => 'Дполнительный email',
+    'id' => 'additional_email',
+]);
+$form->renderFields();
+$form->end();
 
+$form2 = new UserForm([
+    'action' => "save_client.php",
+    'method' => 'POST'
+]);
 
+$form2->start();
+$form2->field(type: "text", name: "user_id", params: [
+    'class' => 'inputForm',
+    'label' => 'Пользователь',
+    'id' => 'user_id',
+]);
+$form2->renderFields();
+$form2->end();
 
